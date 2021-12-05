@@ -3,8 +3,7 @@ from sklearn.linear_model import LogisticRegression
 from sklearn.metrics import accuracy_score
 from sklearn.model_selection import train_test_split
 import numpy as np
-import optuna
-from sklearn.model_selection import cross_validate
+
 from sklearn.model_selection import cross_val_score
 
 
@@ -43,3 +42,7 @@ def phishing_main():
     scores_val = 100 * scores.mean()
     # 汎化性能を出力
     print("scores_val:{}".format(scores_val))
+    print('')
+
+
+
