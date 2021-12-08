@@ -53,3 +53,5 @@ def tuning_exec():
     study.optimize(objective_obj, timeout=60)
     # ベストのパラメータの出力
     print('params:', study.best_params)
+
+    return study
