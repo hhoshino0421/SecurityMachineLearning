@@ -20,8 +20,6 @@ def main_func():
     malware_random_forest_learning(study_obj, x_obj, y_obj)
 
 
-
 # エントリポイント関数
 if __name__ == '__main__':
     main_func()
-
