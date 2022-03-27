@@ -57,17 +57,9 @@ def Objective(trial):
         , validation_split=0.2
     )
 
-    # history = model.fit(
-    #     x_train_copy
-    #     , y_train_copy
-    #     , batch_size=512
-    #     , epochs=5
-    #     , validation_split=0.2
-    # )
-
     eval_value = 1 - history.history["val_accuracy"][-1]
 
-    # 訓練データの削除と
+    # 訓練データの削除とメモリの解放
     clear_session()
     # del model, optimizer, history, x_train_copy, y_train_copy
     del model, optimizer, history, x_train, y_train
