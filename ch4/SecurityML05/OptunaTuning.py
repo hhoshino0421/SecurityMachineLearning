@@ -80,6 +80,8 @@ def tuning_parameter(data_dir):
     study_obj.optimize(Objective, n_trials=3, timeout=1200)
     print('Best Params:', study_obj.best_params)
 
-    # 最適パラメータオブジェクトを返送
+    clear_session()
+
+    # 最適なパラメータを返送
     return study_obj
 
