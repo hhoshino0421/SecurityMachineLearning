@@ -62,7 +62,7 @@ def Objective(trial):
     # 訓練データの削除とメモリの解放
     clear_session()
     # del model, optimizer, history, x_train_copy, y_train_copy
-    del model, optimizer, history, x_train, y_train
+    del model, optimizer, history, x_train, y_train,  x_test, y_test
     gc.collect()
 
     return eval_value
