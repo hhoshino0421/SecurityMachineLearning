@@ -37,13 +37,17 @@ def Objective(trial):
     model = Sequential()
     model.add(Dense(2048, activation='relu', input_dim=2381))
     # model.add(Dropout(rate=dropout_rate))
-    model.add(Dropout(rate=0.2))
+    dropout_rate = trial.suggest_uniform('dropout_rate', 0, 0.5)
+    # model.add(Dropout)
+    # model.add(Dropout(rate=0.2))
+    model.add(Dropout(rate=dropout_rate))
     model.add(Dense(1024, activation='relu'))
     model.add(Dense(1, activation='sigmoid'))
 
     optimizer = adam.Adam(learning_rate=trial.suggest_loguniform("learning_rate", 1e-5, 1e-1),
                           beta_1=trial.suggest_uniform("beta_1", 0.0, 1.0),
-                          beta_2=trial.suggest_uniform("beta_2", 0.0, 1.0))
+                          beta_2=trial.suggest_uniform("beta_2", 0.0, 1.0)
+                          )
 
     model.compile(loss='binary_crossentropy',
                   optimizer=optimizer,

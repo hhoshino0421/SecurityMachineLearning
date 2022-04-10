@@ -3,11 +3,13 @@
 from keras.models import save_model
 
 from FileDataRead import *
+from MachineLearningMalware import *
 
 
+# 機械学習モデル保存
 def save_model(data_file_dir, estimator, model_file_save):
 
-    # estimator = buildmodel()
+    estimator = build_model()
 
     x_train, y_train, x_test, y_test = read_file_data(data_file_dir)
 
