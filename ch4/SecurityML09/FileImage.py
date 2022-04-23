@@ -5,7 +5,7 @@ import numpy as np
 import imageio
 
 
-def file_image(file_name_path):
+def file_image(file_name_path , image_file_path_name):
 
     file_size = os.path.getsize(file_name_path)
 
@@ -20,11 +20,9 @@ def file_image(file_name_path):
 
     file_obj.close()
 
-    output_imgae_file_name = "putty.png"
-
     image_obj = np.reshape(array_obj, (len(array_obj)//width_size, width_size) )
     image_obj = np.uint8(image_obj)
-    imageio.imwrite(output_imgae_file_name, image_obj)
+    imageio.imwrite(image_file_path_name, image_obj)
 
-    return output_imgae_file_name
+    return
 

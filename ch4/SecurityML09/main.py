@@ -13,11 +13,13 @@ from ImageView import *
 def main():
 
     file_name_path = "/home/hhoshino/data/file/putty.exe"
+    image_file_path_name = "/home/hhoshino/data/file/putty.png"
 
-    image_file_name = file_image(file_name_path)
 
-    path_name = "/home/hhoshino/develop/Pychram_workspace/SecurityML09/"
-    image_file_path_name = path_name + image_file_name
+    file_image(file_name_path, image_file_path_name)
+
+    # path_name = "/home/hhoshino/develop/Pychram_workspace/SecurityML09/"
+    # image_file_path_name = path_name + image_file_name
 
     image_view(image_file_path_name)
 
